@@ -21,3 +21,6 @@
 # Case 5
 
 ![image](https://github.com/MahmoudHegazi/difchecker2/assets/55125302/dc80412d-a2dc-4959-9d22-8b72e9d2b819)
+
+# Case Style
+![image](https://github.com/MahmoudHegazi/difchecker2/assets/55125302/b996cc63-8ac8-4f21-aa39-9e4fb2484d88)
