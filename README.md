@@ -48,3 +48,6 @@ but here as the date is 2014 and 2012 are share things as they not far and numbe
 # Case Code check 2
 
 ![image](https://github.com/MahmoudHegazi/difchecker2/assets/55125302/3baea679-da99-4176-9af1-eec562be3249)
+
+# case update untilend can have max if need
+![image](https://github.com/MahmoudHegazi/difchecker2/assets/55125302/935b5472-5117-424b-9867-710179992bc5)
