@@ -49,6 +49,7 @@ but here as the date is 2014 and 2012 are share things as they not far and numbe
 ![image](https://github.com/MahmoudHegazi/difchecker2/assets/55125302/41143774-49f7-4a29-b732-162081504f5b)
 
 # Case 6 Proirty for no-change of right to left, but updateed right now free on all page text so it will check update later after no-change
+as see iam have on first item right 27 i need loop over allleft that start from loop index to get if there is 27 no change so if found, anything before 27 without no-change status is removed between right line found and left line found on left is removed thats why 3 and 3 here is `<strong>removed</strong>` and added
 ![image](https://github.com/MahmoudHegazi/difchecker2/assets/55125302/c4859f4b-dffa-46a9-b4b3-dfe1cff1202b)
 
 # Case Style
