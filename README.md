@@ -9,10 +9,18 @@
 
 ![image](https://github.com/MahmoudHegazi/difchecker2/assets/55125302/3cecb753-35f8-411c-a919-cbfcc4831fb6)
 
-# dynamic identify 
+# dynamic identify Case 1
 lower size check speacifity like small numbers , 1 and 2 total diffrent things so it removed and added  later when no-change (with same code continues) may find 2 and 2 so it give the right prority,
 rememeber everything done in 1 loop for no-change and 1 for update
 ![image](https://github.com/MahmoudHegazi/difchecker2/assets/55125302/0ae05723-ceeb-4362-897b-40f1ce7ea34a)
+
+# dynamic ideneity Case 2
+but here as the date is 2014 and 2012 are share things as they not far and number 1 and 2 they both dates that achived by 4 characters length proirty 
+![image](https://github.com/MahmoudHegazi/difchecker2/assets/55125302/db004529-f460-4e4d-b3c0-986cbcd01061)
+
+
+
+![image](https://github.com/MahmoudHegazi/difchecker2/assets/55125302/13b32f0a-05ea-4f2a-8c98-b419fde10958)
 
 # Case Code check 1
 ![image](https://github.com/MahmoudHegazi/difchecker2/assets/55125302/511b5a4e-d30d-4782-a165-5d0b2f31f218)
