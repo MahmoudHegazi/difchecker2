@@ -9,6 +9,10 @@
 
 ![image](https://github.com/MahmoudHegazi/difchecker2/assets/55125302/3cecb753-35f8-411c-a919-cbfcc4831fb6)
 
+# dynamic identify 
+lower size check speacifity like small numbers , 1 and 2 total diffrent things so it removed and added  later when no-change may find 2 and 2 so it give the right prority
+![image](https://github.com/MahmoudHegazi/difchecker2/assets/55125302/0ae05723-ceeb-4362-897b-40f1ce7ea34a)
+
 # Case Code check 1
 ![image](https://github.com/MahmoudHegazi/difchecker2/assets/55125302/511b5a4e-d30d-4782-a165-5d0b2f31f218)
 
