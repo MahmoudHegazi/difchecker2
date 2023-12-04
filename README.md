@@ -16,3 +16,8 @@
 # Case 4
 
 ![image](https://github.com/MahmoudHegazi/difchecker2/assets/55125302/cb1739d4-fcf5-4713-8d93-ad47782a5db1)
+
+
+# Case 5
+
+![image](https://github.com/MahmoudHegazi/difchecker2/assets/55125302/dc80412d-a2dc-4959-9d22-8b72e9d2b819)
