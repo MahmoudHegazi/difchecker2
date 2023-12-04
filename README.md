@@ -56,6 +56,10 @@ as see iam have on first item right 27 i need loop over allleft that start from 
 
 ![image](https://github.com/MahmoudHegazi/difchecker2/assets/55125302/c4859f4b-dffa-46a9-b4b3-dfe1cff1202b)
 
+# Case Require Advanced test nums like this and prev
+![image](https://github.com/MahmoudHegazi/difchecker2/assets/55125302/2afc25ba-5abb-44ef-beb0-4ccaf0df4116)
+
+
 # Case Style
 ![image](https://github.com/MahmoudHegazi/difchecker2/assets/55125302/b996cc63-8ac8-4f21-aa39-9e4fb2484d88)
 
