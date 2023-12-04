@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+
+
+#cont {
+
+  width: 90%;
+   margin-left: auto;
+    margin-right: auto;
+  display: grid;
+   box-sizing: border-box;
+   grid-template-columns: 50% 50%;
+   padding: 0 !important;
+   gap: 0px;
+   height: fit-content;
+ /*
+  justify-content: space-around;
+  align-items: flex-start;
+ 
+*/
+}
+
+#cont div:nth-child(1) {
+  border-left: 1px solid lightgray;
+}
+#cont div {
+ 
+  border-right: 1px solid lightgray;
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+   overflow: auto;
+    height:fit-content;
+    padding: 0 !important;
+    
+}
+
+#cont div p {
+border-bottom: 1px solid rgb(230, 230, 230);
+padding: 8px 6px;
+margin: 0;
+}
+
+#cont div p:last-child{
+  border: none;
+}
+
+    .bg-danger { 
+      background: rgb(240 30, 10);
+    }
+    .bg-success { 
+      background: rgb(30 240, 10);
+    }
+    
+    .bg-warning {
+      background: rgb(250 200, 10);
+    }
+    .text-white { 
+      color: rgb(255 255, 255);
+    }
+    
+    
+</style>
+
+</head>
+<body>
+
+<h2>My First JavaScript</h2>
+
+<div id="cont">
+    <div id="left">
+    </div>
+    
+    <div id="right">
+    </div>
+</div>
+<script>
+let removed = 0;
+let added = 0;
+function setList(text, targetDiv, className){
+  const result = [];
+
+      if (targetDiv){
+        ;
+        const lines = text.split("\n");
+        const frag = document.createDocumentFragment();
+        lines.forEach( (line, i)=>{ 
+          const lineElm = document.createElement("p");
+          lineElm.innerText = line;
+          lineElm.classList.add("text_line",className);
+          frag.appendChild(lineElm);
+          const lineObj = {
+             text: line,
+             relation: {},
+             elm: lineElm,
+             i: i
+             
+          };
+          result.push(lineObj);
+        });
+        targetDiv.appendChild(frag);
+        
+      }
+
+  return result;
+}
+
+
+const leftLines = (function(){
+const leftDiv = document.querySelector("#left");
+const text = `check word1
+hello world
+test something
+check word 4
+new something 1234
+new something`;
+return setList(text, leftDiv, 'left');
+})();
+const rightLines = (function(){
+const rightDiv = document.querySelector("#right");
+const text = `check word1
+about part in somepint here
+function is diffrent than variable
+check word 4
+new something 123`;after that u need magician
+
+/*
+const leftLines = (function(){
+const leftDiv = document.querySelector("#left");
+const text = `ABC1
+ABC2
+ABC5 Hello world
+ABC4
+ABC3`;
+return setList(text, leftDiv, 'left');
+})();
+const rightLines = (function(){
+const rightDiv = document.querySelector("#right");
+const text = `ABC1
+ABC6
+ABC2
+ABC3
+ABC7
+ABC8`;
+
+*/
+return setList(text, rightDiv, 'right');
+})();
+/*
+leftLines[0]["status"] = "removed";
+leftLines[1]["status"] = "no-change";
+leftLines[2]["status"] = "removed";
+leftLines[3]["status"] = "removed";
+leftLines[4]["status"] = "no-change";
+
+
+rightLines[0]["status"] = "no-change";
+rightLines[1]["status"] = "no-change";
+rightLines[2]["status"] = "added";
+rightLines[3]["status"] = "added";
+rightLines[4]["status"] = "added";
+
+*/
+
+
+
+
+
+for (let r=0; r<rightLines.length; r++){
+  const right = rightLines[r];
+  
+  /* Delete check */
+  for (let l=0; l<leftLines.length; l++){
+    const repeatedLeft = leftLines[l];
+    if (right.text == repeatedLeft.text && (!repeatedLeft.status)) {
+
+      
+      
+      // test
+      if (right.text == repeatedLeft.text && (repeatedLeft.status)){
+alert("error");
+console.log('error', right, repeatedLeft);
+}
+      /* unique elements before that not have status yet note every time in right loop we loop from bgining of left this filter so sure get repeated status can add more complex to get startfrom on left instead of slice(0,l) will be slice(startof, l)*/
+      
+      const prevRepeatedLeftL = leftLines.slice(0, l).filter((prevRepeatedLeft)=>{
+        return (!prevRepeatedLeft.status) ? true : false;
+      });
+      // unique elements reamning on left with no reaming on lines, this case when left list old file bigger than new list right
+      
+      console.log("additional left elements", prevRepeatedLeftL);
+      
+      prevRepeatedLeftL.forEach( (removedObj)=>{
+         removedObj.status = 'removed';
+         removed += 1;
+      });
+      
+      
+
+
+      // no need if as code written logicly every peace but this unknown errors like js server externals !right.status && !repeatedLeft.status
+      /*if (!right.status){*/
+         right.status = 'no_change';
+         repeatedLeft.status = 'no_change';
+         /* declar relationship update or equal so incase change one change both  when no-change override update*/
+         
+         right.relation = repeatedLeft;
+         repeatedLeft.relation = right;
+      /*}*/
+
+      
+      
+      break;
+    } else {
+      continue;
+    }
+    
+  }
+  
+  /* Update check */
+  // previous check was for delete now loop check if update of deleted only as proirty to difcheck delete addsee update 
+
+  if (!right.status){
+  
+  console.log("\n\n\n\nf", rightLines, leftLines, "\n\n");
+     // if status add check if it was update not add with one of removed
+     
+     
+     const reamings = leftLines.filter((leftLineObj1)=>{
+        return (leftLineObj1.status == "no_change") ? false : true;
+     });
+     
+
+     console.log(reamings.length, 'here2');
+     
+     for (let lUpdate = 0; lUpdate <reamings.length; lUpdate++){
+        const leftUpdate = reamings[lUpdate];
+        console.log(leftUpdate.text);
+        // note some lines may be 1 char so not accept it 
+       if (right.text.length >= 4 && leftUpdate.text.length >= 4){
+        console.log(`Left: ${leftUpdate.text}, ${right.text} :Right\n ${'-'.repeat(30)}:`, isUpdate(right.text, leftUpdate.text));
+          const updated = isUpdate(right.text, leftUpdate.text);
+          if (updated.validUpdate && !right.status && !leftUpdate.status){
+          alert("found one updated"+right.text+'-'+leftUpdate.text);
+
+            right.status = 'updated';
+            leftUpdate.status = 'updated';
+         /* declar relationship update or equal so incase change one change both  when no-change override update*/
+         right.relation = leftUpdate;
+         leftUpdate.relation = right;
+         
+         
+            // note no-change override update
+            break;
+          }
+          
+        }
+        /* update again loop on left to check update before go to added as remaning logicaly */
+        /*
+     const left = reamings[lUpdate];
+     console.log("hello");
+     */
+     // check update start from 4 characters
+
+     }
+     
+     
+
+       
+
+     
+  }
+  // left nested loop end
+      
+      /*#######  Handle cases Biger right list or left lists than each other direct add or remove  #########*/
+      
+      /* left bigger than right handle 1 time run */
+    if (
+    (r == (rightLines.length-1)) &&
+    (leftLines.length > rightLines.length)){
+    
+       // 
+       const remeaningRepeatedLeftL = leftLines.slice(rightLines.length).filter( (anyRemaningLeft)=>{
+          return (!anyRemaningLeft.status) ? true : false;
+       });
+       
+       remeaningRepeatedLeftL.forEach( (remaningLeft)=>{
+          if (!remaningLeft.status){
+             remaningLeft.status = 'removed';
+             removed += 1;
+          }
+       });
+      
+      
+    }
+    // run 1 time at end of loop and all check process if any not processed with no status so it added, removed
+         if (r == (rightLines.length-1)){
+       
+       
+       const remeaningRightL = rightLines.filter( (anyRemaningRight)=>{
+          return (!anyRemaningRight.status) ? true : false;
+       }); 
+
+       const remeaningLeftL = leftLines.filter( (anyRemaningLeft)=>{
+          return (!anyRemaningLeft.status) ? true : false;
+       });
+       
+
+       remeaningLeftL.forEach( (remaingLeft)=>{
+          if (!remaingLeft.status){
+             remaingLeft.status = 'removed';
+             removed += 1;
+          }       
+       });
+       
+       remeaningRightL.forEach( (remaingRight)=>{
+          if (!remaingRight.status){
+             remaingRight.status = 'added';
+             added += 1;
+          }
+       });
+       
+       
+       
+       }
+ /* right bigger than left handle 1 !time run, work with r to get 1 time run */
+ /*
+     if (
+       r > (leftLines.length-1) &&
+       (rightLines.length >leftLines.length)){
+       
+       
+       
+       const remeaningRightL = rightLines.slice(leftLines.length).filter( (anyRemaningRight)=>{
+          return (!anyRemaningRight.status) ? true : false;
+       }); 
+
+       
+       remeaningRightL.forEach( (remaningRight)=>{
+          if (!remaningRight.status){
+             remaningRight.status = 'added';
+          }
+       });
+       
+       
+        break;
+    }*/
+    
+}
+// right loop end
+
+function draw(){
+  const classesDictionary = {
+    no_change: 'no_change',
+    removed: 'bg-danger text-white removed',
+    added: 'bg-success text-white added',
+    updated: 'bg-warning text-white updated'
+  }
+  leftLines.forEach((leftLineObj)=>{
+    const classes = classesDictionary[leftLineObj.status];
+    if ($(leftLineObj.elm).length){
+       $(leftLineObj.elm).addClass(classes);
+       $(leftLineObj.elm).attr("title", leftLineObj.status);
+    }
+  });
+  rightLines.forEach((rightLineObj)=>{
+    const classes = classesDictionary[rightLineObj.status];
+    if ($(rightLineObj.elm).length){
+       $(rightLineObj.elm).addClass(classes);
+       
+       $(rightLineObj.elm).attr("title", rightLineObj.status);
+    }
+  });
+}
+
+draw();
+
+console.log("left", leftLines, "\n\n", removed, added);
+console.log("right", rightLines, "\n\n");
+
+// update is not simple equal need AI and rules this give you fill set rules needed and proirty easy update depend on startwith or includes js alo of match and math -> precentage
+function isUpdate(rightLineString, LeftLineString){
+  let match = 0;
+  let precentage = 0;
+  // precentage inceraser 1
+  for (let i=0; i<rightLineString.length; i++){
+      let leftChar = rightLineString[i];
+      let rightChar = null;
+      if (LeftLineString.length > i){
+          rightChar = LeftLineString[i];
+      }
+      if (rightChar !== null && leftChar == rightChar){
+          match += 1;
+      }
+      
+  }
+  precentage = Math.floor((match/rightLineString.length) * 100);
+  // precentage inceraser 2
+  if (precentage<75){
+      for (let li=0; li< LeftLineString.length; li++){
+          const LeftExceptme = LeftLineString.slice(0, li) + LeftLineString.slice(li+1);
+          const excpetCertienPartRightIncluded = LeftExceptme.includes(rightLineString);
+          if (excpetCertienPartRightIncluded){
+              precentage = 75;
+              break;
+          } else {
+              continue;
+          }
+      }
+  }
+  return {precentage, validUpdate: (precentage >= 75)};
+}
+
+</script>
+
+</body>
+</html> 
