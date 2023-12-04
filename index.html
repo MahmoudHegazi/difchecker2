@@ -106,47 +106,39 @@ function setList(text, targetDiv, className){
 
   return result;
 }
-
-
-const leftLines = (function(){
-const leftDiv = document.querySelector("#left");
-const text = `check word1
+/* Logic senteances changes
+const text1 = `check word1
 hello world
 test something
 check word 4
 new something 1234
 new something`;
-return setList(text, leftDiv, 'left');
-})();
-const rightLines = (function(){
-const rightDiv = document.querySelector("#right");
-const text = `check word1
+
+const text2 = `check word1
 about part in somepint here
 function is diffrent than variable
 check word 4
-new something 123`;after that u need magician
+new something 123`;
+*/
 
-/*
+const text1 = `1
+2
+3
+4
+5`;
+
+const text2 = `1
+6
+3`;
+
+
 const leftLines = (function(){
 const leftDiv = document.querySelector("#left");
-const text = `ABC1
-ABC2
-ABC5 Hello world
-ABC4
-ABC3`;
-return setList(text, leftDiv, 'left');
+return setList(text1, leftDiv, 'left');
 })();
 const rightLines = (function(){
 const rightDiv = document.querySelector("#right");
-const text = `ABC1
-ABC6
-ABC2
-ABC3
-ABC7
-ABC8`;
-
-*/
-return setList(text, rightDiv, 'right');
+return setList(text2, rightDiv, 'right');
 })();
 /*
 leftLines[0]["status"] = "removed";
