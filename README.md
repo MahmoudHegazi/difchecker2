@@ -5,9 +5,8 @@
 
 ![image](https://github.com/MahmoudHegazi/difchecker2/assets/55125302/b9f4baea-65fe-4886-9786-502edb96c2de)
 
-# Case Code check
-
-![image](https://github.com/MahmoudHegazi/difchecker2/assets/55125302/3baea679-da99-4176-9af1-eec562be3249)
+# Case Code check 1
+![image](https://github.com/MahmoudHegazi/difchecker2/assets/55125302/511b5a4e-d30d-4782-a165-5d0b2f31f218)
 
 # Case 2
 
@@ -28,3 +27,7 @@
 
 # Case Style
 ![image](https://github.com/MahmoudHegazi/difchecker2/assets/55125302/b996cc63-8ac8-4f21-aa39-9e4fb2484d88)
+
+# Case Code check 2
+
+![image](https://github.com/MahmoudHegazi/difchecker2/assets/55125302/3baea679-da99-4176-9af1-eec562be3249)
